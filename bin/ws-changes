@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  echo -e "\nUsage:
+
+$0 <command>
+
+commands:
+  • save
+  • -h | --help
+"
+}
+
+main() {
+  # check for -h or --help
+  if [[ ( "$@" == "--help" ) || "$@" == "-h" ]] ; then
+    usage
+    exit 0
+  fi
+
+  # validate arguments
+  if [ "$#" -lt "1" ] ; then
+    usage
+    exit 1
+  fi
+
+  case "$1" in
+    save) __save
+          ;;
+    *   ) usage
+          ;;
+  esac
+}
+
+# __log() {
+#   echo
+#   echo "current:"
+#   echo
+#   echo "  • $(git show --format="%H ➜ %s" | head -n 1)"
+#   echo
+# }
+
+__head() {
+  echo "➜  $@"
+}
+
+__line() {
+  echo "   • $@"
+}
+
+__save() {
+  PROJECT=${PROJECT:-${WORKSPACE}}
+  CONTEXT=${CONTEXT:-${PROJECT}}
+  VERBOSE=${VERBOSE:-0}
+
+  __head "Saving changes"
+  __line "context: ➜ ${CONTEXT}"
+
+  git add ${WORKSPACE}/CHANGELOG.md
+  git add ${CONTEXT}
+
+  message=$(
+    git diff --staged -- ${WORKSPACE}/CHANGELOG.md \
+    | grep -e '^\+'     \
+    | grep -v '+++'     \
+    | grep -v '\-\-\-'  \
+    | sed 's/^\+//g'    \
+    | sed 's/^head: //g'
+  )
+
+  git commit -m "$message"
+}
+
+main "$@"
