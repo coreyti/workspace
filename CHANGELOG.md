@@ -1,5 +1,5 @@
 ---
-head: Release v0.1.0
+head: Improve footnoting
 ---
 
 # Changelog
@@ -7,6 +7,23 @@ head: Release v0.1.0
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Changed
+
+- Footnotes in (this) Changelog are no longer in a list. That format seems to break GitHub; hopefully this will not.
+- And, while we're here, let's experiment[^vNIL-a] with per-release footnotes.
+- GitHub really doesn't do Markdown footnotes well, but I find them to be very useful. So:
+  - Footnotes should **not** be simple URLs (which GitHub likes just fine).
+  - Footnotes **must** have some text content, even if that is simply markup to turn a link into text.
+  - The result will be that GitHub does not generate links for the in-line footnote references, but will render those references as text. The actual footnote content will *also* be rendered, which is what we're really trying to achieve.
+
+### Footnotes
+
+[^vNIL-a]: Here's a footnote for the current, unrelease work-in-progress.
+
+---
 
 ## [0.1.0] - 2021-05-06
 
@@ -30,7 +47,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Footnotes
 
-- [^v0.1.0-a]: https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-
-- [^v0.1.0-b]: https://www.etymonline.com/word/ergonomics#etymonline_v_11569
+[^v0.1.0-a]: [Article: "A Note About Git Commit Messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+[^v0.1.0-b]: [Etymology Online: "ergonomics"](https://www.etymonline.com/word/ergonomics#etymonline_v_11569)
 
