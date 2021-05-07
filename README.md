@@ -30,6 +30,7 @@ One of:
 
 ## Usage
 
-- `ws-bundle`
-- `ws-changes`
+- `ergo-bundle`
+- `ergo-changes`
+- `ergo-sojourn`
 

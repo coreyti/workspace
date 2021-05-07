@@ -1,5 +1,5 @@
 ---
-head: Rename as "ergonomic"
+head: Introduce `ergo-sojourn`
 ---
 
 # Changelog
@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - A CHANGELOG (this).
   - A "TODO" backlog.
   - Some initial workspace structure and utilities.
+- The `ergo-sojourn` utility provides a simple way to move between points in git history. This is neat for things like flipping through the changes in a repository as a sort of time-lapse presentation.
 
 ### Changed
 

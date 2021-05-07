@@ -4,10 +4,10 @@ set -euo pipefail
 usage() {
   echo -e "\nUsage:
 
-$0 <command>
+$(basename $0) <command>
 
 commands:
-  • save
+  •  s | save
   • -h | --help
 "
 }
@@ -26,10 +26,10 @@ main() {
   fi
 
   case "$1" in
-    save) __save
-          ;;
-    *   ) usage
-          ;;
+    s | save) __save
+              ;;
+    *       ) usage
+              ;;
   esac
 }
 
