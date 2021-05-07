@@ -1,4 +1,4 @@
-# Workspace
+# Ergonomic
 
 ## Overview
 
@@ -19,9 +19,14 @@ This "workspace" provides an approach to helping teams and individuals do "work"
 
 ## Installation
 
-```shell
-$ git clone https://github.com/coreyti/workspace
-```
+One of:
+
+- Open the [`coreyti/ergonomic` project](https://github.com/coreyti/ergonomic) on GitHub and choose "Use this template".
+- Clone that same, and... whatever:
+
+  ```shell
+  $ git clone https://github.com/coreyti/ergonomic
+  ```
 
 ## Usage
 
