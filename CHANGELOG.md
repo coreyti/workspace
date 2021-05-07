@@ -1,5 +1,5 @@
 ---
-head: Improve footnoting
+head: Improve footnoting, part 2 (lists are good again)
 ---
 
 # Changelog
@@ -18,10 +18,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Footnotes should **not** be simple URLs (which GitHub likes just fine).
   - Footnotes **must** have some text content, even if that is simply markup to turn a link into text.
   - The result will be that GitHub does not generate links for the in-line footnote references, but will render those references as text. The actual footnote content will *also* be rendered, which is what we're really trying to achieve.
+- Footnotes are back into lists. Now that we're not utilizing GitHub's naïve handling of footnotes, the list formatting seems to work.
 
 ### Footnotes
 
-[^vNIL-a]: Here's a footnote for the current, unrelease work-in-progress.
+- [^vNIL-a]: Here's a footnote for the current, unrelease work-in-progress.
 
 ---
 
@@ -47,6 +48,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Footnotes
 
-[^v0.1.0-a]: [Article: "A Note About Git Commit Messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
-[^v0.1.0-b]: [Etymology Online: "ergonomics"](https://www.etymonline.com/word/ergonomics#etymonline_v_11569)
+- [^v0.1.0-a]: [Article: "A Note About Git Commit Messages"](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+- [^v0.1.0-b]: [Etymology Online: "ergonomics"](https://www.etymonline.com/word/ergonomics#etymonline_v_11569)
 
