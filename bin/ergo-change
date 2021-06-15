@@ -50,7 +50,6 @@ __save() {
   __line "context: ➜ ${CONTEXT}"
 
   git add ${WORKSPACE}/CHANGELOG.md
-  git add ${CONTEXT}
 
   message=$(
     git diff --staged -- ${WORKSPACE}/CHANGELOG.md \

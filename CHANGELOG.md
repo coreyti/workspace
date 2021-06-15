@@ -1,5 +1,5 @@
 ---
-head: Add `git subrepo` for project work
+head: Remove auto-add for changes
 ---
 
 # Changelog
@@ -23,6 +23,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Footnotes **must** have some text content, even if that is simply markup to turn a link into text.
   - The result will be that GitHub does not generate links for the in-line footnote references, but will render those references as text. The actual footnote content will *also* be rendered, which is what we're really trying to achieve.
 - Footnotes are back into lists. Now that we're not utilizing GitHub's naïve handling of footnotes, the list formatting seems to work.
+
+### Removed
+
+- `ergo-change` was auto-adding changes for commit. The approach is a bit too naïve, and would lead to unintended commits... will revisit another time.
 
 ### Footnotes
 
