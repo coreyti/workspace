@@ -2,6 +2,7 @@
 .elixir_ls
 .local
 .stfolder
+.stignore
 .vscode
 
 /tmp

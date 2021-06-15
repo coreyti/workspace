@@ -1,5 +1,5 @@
 ---
-head: Provide a "workspace" scaffold
+head: Update `ergonomic`
 ---
 
 # Changelog
@@ -8,13 +8,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.1.0] - 2021-06-15
 
-### Added
+### Changed
 
-- A project scaffold made up of:
-  - A [README](./README.md).
-  - A CHANGELOG (this).
-  - A "TODO" backlog.
-  - Some initial workspace structure and utilities.
+- Merged latest from [ergonomic](https://github.com/coreyti/ergonomic):
 
+  > **Added**
+  > - The `git subrepo` extension, via `brew bundle`. The tool provides management of the projects within the workspace.
