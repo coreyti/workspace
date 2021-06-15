@@ -1,5 +1,5 @@
 ---
-head: Improve footnoting, part 2 (lists are good again)
+head: Add `git subrepo` for project work
 ---
 
 # Changelog
@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Added
+
+- The `git subrepo` extension, via `brew bundle`. The tool provides management of the projects within the workspace.
 
 ### Changed
 
