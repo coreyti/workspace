@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  echo -e "\nUsage:
+
+$(basename $0) <command>
+
+commands:
+  •  s | save
+  • -h | --help
+"
+}
+
+main() {
+  # check for -h or --help
+  if [[ ( "$@" == "--help" ) || "$@" == "-h" ]] ; then
+    usage
+    exit 0
+  fi
+
+  # validate arguments
+  if [ "$#" -lt "1" ] ; then
+    usage
+    exit 1
+  fi
+
+  case "$1" in
+    s | save) __save
+              ;;
+    *       ) usage
+              ;;
+  esac
+}
+
+__head() {
+  echo "➜  $@"
+}
+
+__line() {
+  echo "   • $@"
+}
+
+__save() {
+  PROJECT=${PROJECT:-${WORKSPACE}}
+  CONTEXT=${CONTEXT:-${PROJECT}}
+  VERBOSE=${VERBOSE:-0}
+
+  __head "Saving changes"
+  __line "context: ➜ ${CONTEXT}"
+
+  git add ${WORKSPACE}/CHANGELOG.md
+
+  message=$(
+    git diff --staged -- ${WORKSPACE}/CHANGELOG.md \
+    | grep -e '^\+'         \
+    | grep -v '+++'         \
+    | grep -v '\-\-\-'      \
+    | sed 's/^\+//g'
+  )
+
+  head=$(echo "${message}"  \
+    | head -n 1             \
+    | sed 's/^head: //'
+  )
+
+  # NOTE: this `sed` is lame, and won't handle version bumps: '## ...'.
+  body=$(echo "${message}"  \
+    | tail -n +2            \
+    | sed 's/^### //g'      \
+    | fold -w 72 -s
+  )
+
+  git commit -m "$head
+
+$body
+"
+}
+
+main "$@"

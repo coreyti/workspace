@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+main() {
+  : ${WORKSPACE:?'unset - `direnv allow` first'}
+  brew bundle --file ${WORKSPACE}/Brewfile
+}
+
+main "$@"

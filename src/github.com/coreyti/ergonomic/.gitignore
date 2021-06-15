@@ -1,0 +1,10 @@
+.DS_store
+.elixir_ls
+.local
+.stfolder
+.stignore
+.vscode
+
+/tmp
+
+Brewfile.lock.json

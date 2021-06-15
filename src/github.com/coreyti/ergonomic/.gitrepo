@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:coreyti/ergonomic.git
+	branch = main
+	commit = 583b1540e8c070e42f9b5c5c40b84b61eb9fb138
+	parent = 9daee9b026a9abfd2807ff5658a7c9efa1ee64e8
+	method = merge
+	cmdver = 0.4.3
